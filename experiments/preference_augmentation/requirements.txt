@@ -1,0 +1,2 @@
+-r ../input_ablation/requirements.txt
+catboost==1.2.8

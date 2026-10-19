@@ -1,0 +1,43 @@
+# Python runtime files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# Reproducible experiment artifacts: models, embeddings, API responses and logs
+*.log
+*.npz
+*.joblib
+*.cbm
+*.pt
+*.bin
+*.safetensors
+**/outputs/
+**/outputs_*/
+**/final_outputs/
+**/metadata_outputs/
+**/metadata_sources/
+**/source_cache/
+**/verification_replay/
+
+# Intermediate metadata collection files.  Keep the final merged table only.
+abstract_retrieval_cache.jsonl
+aaai_kr2016_abstracts.jsonl
+aaai_kr2016_extra_urls.jsonl
+aaai_kr2016_pdf_index*.jsonl
+gi_dspace_abstract_cache.jsonl
+gi_kryptotag_doi_text_cache.jsonl
+gi_kryptotag_text_cache.jsonl
+kr_proceedings_cache.jsonl
+openaire_abstract_cache.jsonl
+openaire_pdf_abstract_cache.jsonl
+publisher_pdf_abstracts.jsonl
+publisher_search_cache.jsonl
+springer_official_cache.jsonl
+verified_external_abstracts.jsonl
+abstracts_completed.csv
+abstracts_multisource.csv
+abstracts_semanticscholar.csv

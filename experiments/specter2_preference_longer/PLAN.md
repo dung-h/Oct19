@@ -1,0 +1,18 @@
+# SPECTER2 preference adapter: 8 vs 16 epochs
+
+Locked before training. The existing title-only preference experiment selected its last checkpoint at 8 epochs in 5/5 outer folds. This follow-up tests that one unresolved choice with the same model and training recipe. It does not promise H > .7.
+
+- Reuse the existing SPECTER2 base and regression adapter revisions, title-only text, max128 tokens, CLS L2 embeddings, 64-unit MLP, CE5 + .5 read BCE loss, AdamW, learning rates, batch size, dropout, seed, optimizer, and AMP settings. Do not alter labels or features.
+- Compare adapted checkpoints 8 and 16 on the same five grouped outer folds and four inner folds, plus the existing multiclass incumbent. Train once to epoch16 per partition and read the epoch8 snapshot from that same run. Verify its epoch8 predictions match the archived epoch8 run.
+- For each adapted checkpoint, choose the read threshold 0:.05:.90 using mean H across the four inner folds. The global policy chooses between epoch8, epoch16, and incumbent using inner H only. Outer labels do not choose thresholds, checkpoints, or families.
+- Fit final inner folds, select the final checkpoint/policy, generate test candidates, and save/reload the selected adapter/head. Keep the incumbent intact and do not upload.
+- Primary contrasts: epoch16 versus epoch8; epoch8/16 versus incumbent; complete inner-selection policy versus incumbent. Report H/Q/recall, AUC, FP/FN, missed labels4/5, and per-fold changes. No extra epochs or seeds after viewing outer scores.
+- This is a sequential stop/go check on previously inspected outer data, not a fresh holdout. Proceed to an abstract input experiment only if epoch16 improves over epoch8 under inner-selected outer evaluation without an unacceptable recall/high-rating miss increase.
+
+## Preflight correction before outer scoring
+
+The first preflight reached epoch16 on one inner partition and matched the archived epoch8 cache, but was interrupted during the next partition before any outer score. The final test partition can contain duplicate groups shared with train; the reusable training helper requires a non-null save directory for that established case. The corrected runner passes a partition-local model directory for test prediction only, following the existing final SPECTER2 workflow. Training, labels, folds, epochs and thresholds are unchanged. The initial protocol is preserved as `outputs/protocol_preflight.json`; the final protocol records this correction's hash. The completed preflight cache is reused because model code and its training arguments are identical.
+
+The first full inner set then completed before a second preflight-only code issue: the inherited chooser assumes exactly the previous `frozen`/`adapted` arm names. It failed before outer metrics. The runner now applies the same H and .80-recall diagnostic over the explicitly listed epoch8, epoch16 and incumbent families. The initial chooser version and protocol are retained as `protocol_preflight2.json`; the final protocol binds this chooser correction. The first inner set is reusable because model predictions and splits are unchanged.
+
+The second preflight completed the first outer refit but hit an epoch-cache schema difference: prior inner caches store epochs1/2/4/8, while prior outer refits store only the selected checkpoint (epoch8 here). It failed before scoring that outer fold. The runner now compares directly against the archived epoch8 array instead of asking the prior loader for all checkpoints. This is a verification-only correction; model fitting and predictions are unchanged. `protocol_preflight3.json` preserves the second preflight protocol.

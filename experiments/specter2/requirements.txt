@@ -1,0 +1,11 @@
+# Python 3.10; these versions match the executed experiment.
+torch==2.1.2
+transformers==4.40.2
+adapters==0.2.2
+huggingface-hub==0.25.2
+numpy==1.26.4
+pandas==2.3.3
+scikit-learn==1.7.2
+scipy==1.15.3
+joblib==1.5.3
+threadpoolctl==3.6.0

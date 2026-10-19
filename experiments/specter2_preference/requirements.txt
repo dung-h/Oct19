@@ -1,0 +1,10 @@
+torch==2.1.2+cu121
+adapters==0.2.2
+transformers==4.40.2
+numpy==1.26.4
+pandas==2.3.3
+scikit-learn==1.7.2
+huggingface-hub==0.25.2
+threadpoolctl==3.6.0
+tabulate==0.10.0
+catboost==1.2.8
