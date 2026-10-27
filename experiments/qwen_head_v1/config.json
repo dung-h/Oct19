@@ -1,0 +1,33 @@
+{
+  "seed": 20261030,
+  "pool_partition": "outer1_inner0",
+  "validation_fraction": 0.2,
+  "epochs": 3,
+  "train_probes": 128,
+  "lambda_grid": [0.001, 0.01, 0.1, 1.0, 10.0],
+  "cv_folds": 3,
+  "max_iterations": 2000,
+  "read_cutoff": 0.55,
+  "bootstrap_repeats": 1000,
+  "model": {
+    "id": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "title_tokens": 80,
+    "abstract_tokens": 560,
+    "max_input_tokens": 1024,
+    "answer_strings": ["1", "2", "3", "4", "5"],
+    "missing_abstract": "[No verified abstract available.]"
+  },
+  "training": {
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "lora_target_modules": ["q_proj", "v_proj"],
+    "bias": "none",
+    "gradient_accumulation_steps": 16,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "max_grad_norm": 1.0
+  }
+}
