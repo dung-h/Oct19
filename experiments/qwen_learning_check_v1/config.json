@@ -1,0 +1,13 @@
+{
+  "pool_partition": "outer1_inner0",
+  "seed": 20261030,
+  "validation_group_fraction": 0.2,
+  "train_probes": 128,
+  "epochs": 3,
+  "bias_L2": 0.0001,
+  "linear_head_C": 1.0,
+  "linear_head_max_iter": 2000,
+  "tfidf_max_features": 20000,
+  "read_cutoff": 0.55,
+  "bootstrap_repeats": 500
+}
