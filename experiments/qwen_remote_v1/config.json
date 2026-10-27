@@ -1,0 +1,37 @@
+{
+  "experiment": "qwen_remote_v1",
+  "seed": 20261027,
+  "model": {
+    "id": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "max_input_tokens": 1024
+  },
+  "input": {
+    "answer_strings": ["1", "2", "3", "4", "5"],
+    "title_tokens": 80,
+    "abstract_tokens": 560,
+    "missing_abstract": "[No verified abstract available.]"
+  },
+  "training": {
+    "epochs": 1,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "lora_target_modules": ["q_proj", "v_proj"],
+    "bias": "none",
+    "gradient_accumulation_steps": 16,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "max_grad_norm": 1.0
+  },
+  "partitions": ["outer1_inner0", "outer1_inner1"],
+  "evaluation": {
+    "read_cutoff": 0.55,
+    "mean_H_improvement_min": 0.003,
+    "matched_budget_FP_reduction_min": 5,
+    "each_partition_H_change_min": 0.0,
+    "missed_label4_change_max": 0,
+    "missed_label5_change_max": 0
+  }
+}

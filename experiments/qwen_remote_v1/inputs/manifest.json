@@ -1,0 +1,19 @@
+{
+  "description": "Fixed cleaned incumbent inputs; no new abstract or author repairs; train only",
+  "documents": 2494,
+  "test_documents": 0,
+  "sources": {
+    "experiments/llm_preference/outputs/setup/documents.jsonl": "0274a1feb534d8f74469425c100055ab185c09b01c02b1f6fa667bb7071d7738",
+    "experiments/llm_preference/outputs/setup/targets.jsonl": "2afdf2b35cabfa625758d5f8308d5dfb5a5b0942b376f462e6471931c18aa2f2",
+    "experiments/llm_preference/outputs/setup/partitions.json": "f5180a65129b478feba278e478f2e2f6fe99a074ba551255ca078c0bd7f4af5b",
+    "assignment-data-mining-261.zip": "c846438dc395ba4162044acae5a6940313a65c6034d538f6629b0aaaabb89e56",
+    "experiments/preference_augmentation/outputs/outer1_inner0.npz": "51348be85cfb81757d9626fcb632aa04265cf62e67b9906f307e81dab94ccba9",
+    "experiments/preference_augmentation/outputs/outer1_inner1.npz": "1e07f5d8cb6fe0bbb47bf2ccc2385252c3a7e29a2e3dc5d5546c06da63bd7dc2"
+  },
+  "files": {
+    "documents.jsonl": "23fcc450efe953a60771b69d7bce0d216ba8cbe17e922f60a06492c4154dfd40",
+    "targets.jsonl": "2afdf2b35cabfa625758d5f8308d5dfb5a5b0942b376f462e6471931c18aa2f2",
+    "partitions.json": "0e0820cb1779f0eef5219b69a46d0f101e6b4ab1d464f22f44123a7e31acca40",
+    "baseline.json": "6e1bf7464416beaa4035f8fd217df5c033af4e79518e324c9a2f6d9cb757901a"
+  }
+}

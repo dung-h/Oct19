@@ -1,0 +1,9 @@
+# Install CUDA-enabled torch separately, as in README.md. Python 3.11 recommended.
+transformers==4.51.3
+peft==0.15.2
+accelerate==1.6.0
+bitsandbytes==0.45.5
+numpy==1.26.4
+scikit-learn==1.6.1
+safetensors==0.5.3
+huggingface-hub==0.30.2
