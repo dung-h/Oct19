@@ -2,6 +2,8 @@
 
 Trạng thái: plan mới, chưa implement/chạy. Gate của `head_v1` vẫn là FAIL;
 plan này không đổi cutoff hoặc chọn lại checkpoint để làm run cũ đạt gate.
+Đây là nhánh A của [MASTER_PLAN.md](MASTER_PLAN.md); roadmap đó còn có
+feasibility/pilot author×topic trên CPU và các điều kiện mở confirmation.
 
 ## Quyết định
 
