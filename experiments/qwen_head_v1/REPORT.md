@@ -95,8 +95,8 @@ và missed5 mỗi loại tăng ba. So B, C thêm ích lợi rõ trong split này
 −.0364, AUC +.0587; native H tăng .0314, nhưng missed4 tăng một và missed5
 tăng ba.
 
-TF-IDF control trên cùng validation có CE 1.3712, AUC .7099, H .5839; nó
-vẫn mạnh hơn C theo các điểm này. Vì fold đã xem nhiều lần, không coi các
+TF-IDF control trên cùng validation có CE 1.3712, AUC .7099, H .5839: CE thấp
+hơn và H cao hơn C, trong khi C có read AUC cao hơn (.7190). Vì fold đã xem nhiều lần, không coi các
 chênh lệch là xác nhận độc lập. Giữ incumbent. Bằng chứng hiện tại ủng hộ
 việc mang **recipe C đã khóa** sang một protocol group-confirmation riêng;
 không mở thêm epoch/LR/cutoff grid trên validation cũ. Cần đánh giá coverage
