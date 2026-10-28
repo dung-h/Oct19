@@ -1,0 +1,17 @@
+{
+  "experiment": "qwen_objective_pilot_v1",
+  "seed": 20261103,
+  "lambda_grid": [0.001, 0.01, 0.1, 1.0, 10.0],
+  "cv_folds": 3,
+  "max_iterations": 2000,
+  "ordinal_alpha": 1.0,
+  "weight_cap": 2.0,
+  "screening": {
+    "minimum_logloss_improvement": 0.01,
+    "minimum_cv_folds_improved": 2,
+    "minimum_read_auc_delta": 0.0
+  },
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "partitions": ["outer1_inner0", "outer1_inner1"]
+}
